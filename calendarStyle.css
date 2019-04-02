@@ -2,6 +2,10 @@ body{
     background: lawngreen;
 }
 
+.calendar {
+    margin: 10%;
+}
+
 
 *{
     margin: 0;
