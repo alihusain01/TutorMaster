@@ -2,8 +2,21 @@ body{
     background: #57fc85;
 }
 
-.calendar {
-    align: center;
+.calendar{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: solid;
+}
+
+iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 
