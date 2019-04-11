@@ -82,7 +82,7 @@ if(page===("loggedIn.html")) {
                     console.log('signed in');
 
                     let data={
-                       
+
                     emailVerified : user.emailVerified,
                     photoURL : user.photoURL,
                      uid : user.uid,
@@ -132,7 +132,42 @@ function signOut(){
 
 ///fonts: Segoe UI Semibold
 ///Bickham Script Pro Bold
-function submitSurvey(){
+let surveyPath=window.location.pathname;
+let surveyPage=surveyPath.split("/").pop();
+console.log(page);
+if(surveyPage===("survey.html")) {
+    function submitSurvey() {
 //add info to object in database
+        /*
+        let englishCourses=document.querySelector(".checkbox:checked").value;
+       // let gradeLevel=document.getElementById('grade').value;
+        var e = document.getElementById("grade");
+        var strUser = e.options[e.selectedIndex].text;
+    console.log(englishCourses);
+        let surveyData={
+        ///data pulled from survey form
+        //gradeLevel:strUser,
+            englishCourses: englishCourses
+    };
+        database.ref('general').push(surveyData);
+        console.log(surveyData);
+    */
 
+        let checkedValue = null;
+        let inputElements = document.querySelector('.messageCheckbox').checked;//document.getElementsByClassName("checkboxE");
+        console.log(inputElements);
+        for (let i = 0; inputElements[i]; ++i) {
+            if (inputElements[i].checked) {
+                checkedValue = inputElements[i].value;
+                break;
+            }
+        }
+        let surveyData = {
+            englishClasses: inputElements
+        }
+        console.log(surveyData);
+        database.ref('general').push(surveyData);
+
+
+    }
 }
