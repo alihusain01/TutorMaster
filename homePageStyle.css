@@ -19,6 +19,33 @@ iframe{
     width: 100%;
 }
 
+img {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    opacity: 0.3;
+}
+
+#developerImage{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    z-index: 0;
+}
+
+#namesList{
+    margin-left: 100px;
+    margin-top: 250px;
+    position: absolute;
+    background-color: darkgray;
+    z-index: 1;
+}
+
+ul{
+    list-style-type: none;
+}
 
 *{
     margin: 0;
