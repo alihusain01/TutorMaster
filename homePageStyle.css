@@ -1,5 +1,5 @@
 body{
-    background: #57fc85;
+    background: #e0f5ff;
 }
 
 .calendar{
@@ -38,14 +38,22 @@ img {
 #namesList{
     margin-left: 100px;
     margin-top: 250px;
+    height: 182px;
+    width: 150px;
     position: absolute;
-    background-color: darkgray;
+    background-color: #cbcbcb;
     z-index: 1;
+    border-radius: 5px;
 }
 
 ul{
-    list-style-type: none;
+    display: inline-block;
 }
+
+ul li {
+    padding: 5px 0px;
+    list-style-type: none;
+    }
 
 *{
     margin: 0;
