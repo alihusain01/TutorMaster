@@ -12,6 +12,23 @@ body{
     border: solid;
 }
 
+.plsLogIn{
+    text-align: center;
+}
+
+.logInContext{
+    font-family: "Century Gothic", sans-serif;
+    font-size:45px;
+    display: inline-block;
+    margin-top: 3%;
+}
+
+.googleLogIn{
+    display: block;
+    margin-top: 4%;
+    margin-left: 7%;
+}
+
 iframe{
     display: block;
     margin-left: auto;
