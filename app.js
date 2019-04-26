@@ -47,7 +47,35 @@ let path=window.location.pathname;
 let page=path.split("/").pop();
 console.log(page);
 if(page===("loggedIn.html")) {
+/// cookie stuff
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/loggedIn.html";
+    }
 
+    function getCookie(cname) {
+        const name = cname + "=";
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++)
+        {
+            let c = ca[i];
+            while (c.charAt(0) === ' ')
+            {
+                c = c.substring(1);
+                console.log(c);
+            }
+            if (c.indexOf(name) === 0)
+            {
+                let output= c.substring(name.length, c.length);
+
+                console.log (output);
+                return output;
+            }
+        }
+        return "";
+    }
 
     console.log("got to function");
     initApp = function () {
@@ -98,7 +126,8 @@ if(page===("loggedIn.html")) {
                     else{*/
                         database.ref('general').push(data);
                   //  }
-                        setCookie("username",displayName,30);
+                        setCookie("username",user.displayName,30);
+                        console.log(getCookie("username"));
                 });
 
             } else {
@@ -170,26 +199,5 @@ if(surveyPage===("survey.html")) {
 
 
     }
-    /// cookie stuff
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires="+d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/homepage.html";
-    }
 
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
 }
