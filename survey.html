@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Become a Tutor</title>
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
     <script src="app.js"></script>
-</head>
-<body>
+    
+    <!-- Below from https://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Above from https://realfavicongenerator.net/ -->
+  </head>
+  <body>
     <form action="#" method="post">
-        <table>
-            <tr>
-                <td>Select Classes You Have Taken </td>
-                <tr id="English">
-                    <td>
-                    <input type="checkbox" value="AP Lang" name="English" />AP Lang <br/>
-                    <input type="checkbox" value="Sophomore Honors English"/>Soph. Hrs. English<br/>
-                    </td>
-                </tr>
-                <tr id="Math">
-                <td>
-                    <input type="checkbox" value="AP Calc BC" name="Math"/>AP Calc BC <br/>
-                </td>
-                </tr>
-                <tr id="Social Studies">
-                <td>
-                    <input type="checkbox" value="APUSH" name="Social Studies" />APUSH<br/>
-                </td>
-                </tr>
-                <tr id="Science">
-                <td><input type="checkbox" value="AP Physics 1" name="Science" />AP Physics 1<br/>
-            </tr>
-            <tr>
-                <td>Grade Level</td>
-                <td> <select id="grade">
-                    <option value="Freshman">Fr</option>
-                    <option value="Sophomore">Sm</option>
-                    <option value="Junior">Jr</option>
-                    <option value="Senior">Sr</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td> <input type="reset"/></td>
-                <td><button id="submit" type="submit" onClick="submitSurvey()">Send Info</button></td>
-            </tr>
-
-        </table>
+      <table>
+        <tr>
+          <td>Select Classes You Have Taken </td>
+          <tr id="English">
+            <td>
+            <input type="checkbox" value="AP Lang" name="English" />AP Lang <br/>
+            <input type="checkbox" value="Sophomore Honors English"/>Soph. Hrs. English<br/>
+            </td>
+          </tr>
+          <tr id="Math">
+            <td>
+              <input type="checkbox" value="AP Calc BC" name="Math"/>AP Calc BC <br/>
+            </td>
+          </tr>
+          <tr id="Social Studies">
+            <td>
+              <input type="checkbox" value="APUSH" name="Social Studies" />APUSH<br/>
+            </td>
+          </tr>
+          <tr id="Science">
+            <td>
+              <input type="checkbox" value="AP Physics 1" name="Science" />AP Physics 1<br/>
+            </td>
+          </tr>
+          <tr>
+            <td>Grade Level</td>
+            <td> 
+              <select id="grade">
+                <option value="Freshman">Fr</option>
+                <option value="Sophomore">Sm</option>
+                <option value="Junior">Jr</option>
+                <option value="Senior">Sr</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td> <input type="reset"/></td>
+            <td><button id="submit" type="submit" onClick="submitSurvey()">Send Info</button></td>
+          </tr>
+        </tr>
+      </table>
     </form>
-</body>
+  </body>
 </html>
