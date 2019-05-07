@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Tutor Master</title>
     <link href="test.css" type="text/css" rel="stylesheet">
-   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-</head>
-<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link href="homePageStyle.css" type="text/css" rel="stylesheet">
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="app.js"></script>
+    
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+          <h1>Tutor Masters</h1>
+      </div>
+      <ul class="nav-links">
+          <li><a href="homePage.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </div>
+      <script src="homePage.js"></script>
+    </nav>
 
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-<link href="homePageStyle.css" type="text/css" rel="stylesheet">
-
-<nav>
-    <div class="logo">
-        <h1>Tutor Masters</h1>
+    <div class="plsLogIn">
+        <h1 class="logInContext" style="color: #414141;"> Please Log In</h1>
+        <div class ="googleLogIn" id="firebaseui-auth-container"></div>
     </div>
-    <ul class="nav-links">
-        <li><a href="homePage.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-    </ul>
-    <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-    </div>
-    <script src="homePage.js"></script>
-</nav>
-<div class="plsLogIn">
-    <h1 class="logInContext" style="color: #414141;"> Please Log In</h1>
-    <div class ="googleLogIn" id="firebaseui-auth-container"></div>
-</div>
-
-<body>
-
-<script src="app.js"></script>
-</body>
+  </body>
 </html>
