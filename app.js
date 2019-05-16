@@ -1,3 +1,4 @@
+
 const config ={
     apiKey: "AIzaSyC_9dB1fg6S0Tg_YV3ca8CKiavOUzpCrh4",
     authDomain: "tutoring-website-2c061.firebaseapp.com",
@@ -9,14 +10,12 @@ const config ={
 firebase.initializeApp(config);
 
 let database=firebase.database();
-let tutors=database.ref('tutors');
-let students=database.ref('students');
 let general=database.ref('general');
-
+let currentUser="";
 
 // FirebaseUI config.
 const uiConfig = {
-    signInSuccessUrl: 'homePage.html',
+    signInSuccessUrl: 'loggedIn.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -48,36 +47,10 @@ let page=path.split("/").pop();
 console.log(page);
 if(page===("loggedIn.html")) {
 /// cookie stuff
-    function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/loggedIn.html";
-    }
 
-    function getCookie(cname) {
-        const name = cname + "=";
-        const ca = document.cookie.split(';');
-        for(let i = 0; i < ca.length; i++)
-        {
-            let c = ca[i];
-            while (c.charAt(0) === ' ')
-            {
-                c = c.substring(1);
-                console.log(c);
-            }
-            if (c.indexOf(name) === 0)
-            {
-                let output= c.substring(name.length, c.length);
-
-                console.log (output);
-                return output;
-            }
-        }
-        return "";
-    }
 
     console.log("got to function");
+    let initApp;
     initApp = function () {
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
@@ -89,6 +62,7 @@ if(page===("loggedIn.html")) {
                 const uid = user.uid;
                 const phoneNumber = user.phoneNumber;
                 const providerData = user.providerData;
+                currentUser= user.displayName;
                 user.getIdToken().then(function (accessToken) {
 
                     document.getElementById('sign-in-status').textContent = 'Signed in';
@@ -111,11 +85,11 @@ if(page===("loggedIn.html")) {
 
                     let data={
 
-                    emailVerified : user.emailVerified,
-                    photoURL : user.photoURL,
-                     uid : user.uid,
-                     phoneNumber: user.phoneNumber,
-                     providerData : user.providerData
+                        emailVerified : user.emailVerified,
+                        photoURL : user.photoURL,
+                        uid : user.uid,
+                        phoneNumber: user.phoneNumber,
+                        providerData : user.providerData
                     };
                     /*if(user=tutor){
                         database.ref('tutors').push(data);
@@ -124,10 +98,9 @@ if(page===("loggedIn.html")) {
                         database.ref('tutors').push(data);
                     }
                     else{*/
-                        database.ref('general').push(data);
-                  //  }
-                        setCookie("username",user.displayName,30);
-                        console.log(getCookie("username"));
+                    database.ref('general').push(data);
+                    //  }
+
                 });
 
             } else {
