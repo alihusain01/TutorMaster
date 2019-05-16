@@ -72,6 +72,13 @@ ul li {
     list-style-type: none;
     }
 
+surveyBox{
+    background-color: #b946cb;
+    display: flex;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
 *{
     margin: 0;
     padding: 0;

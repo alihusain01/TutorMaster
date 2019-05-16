@@ -14,9 +14,32 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <!-- Above from https://realfavicongenerator.net/ -->
+    <link href="homePageStyle.css" type="text/css" rel="stylesheet">
+
   </head>
   <body>
-    <form action="#" method="post">
+
+    <nav>
+    <div class="logo">
+      <h1>Tutor Masters</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="homePage.html">Home</a></li>
+      <li><a href="survey.html">Become a Tutor</a></li>
+      <li><a href="#">Account</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="logInPage.html">Login</a></li>
+      <li><p id ="currentUser"></p></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <script src="homePage.js"></script>
+    </nav>
+
+    <div class="surveyBox"><form class="surveyBox" method="post">
       <table>
         <tr>
           <td>Select Classes You Have Taken </td>
@@ -59,5 +82,6 @@
         </tr>
       </table>
     </form>
+    </div>
   </body>
 </html>
