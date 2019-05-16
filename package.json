@@ -1,0 +1,7 @@
+{
+  "name": "TutorMaster",
+  "version": "1.0.0",
+  "dependencies": {
+    "firebase": "latest"
+  }
+}

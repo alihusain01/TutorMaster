@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Tutor Master</title>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <link href="homePageStyle.css" type="text/css" rel="stylesheet">
-    
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="app.js"></script>
-    
-    <!-- Below from https://realfavicongenerator.net/ -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Above from https://realfavicongenerator.net/ -->
-  </head>
-  <body>
-    <nav>
-      <div class="logo">
-          <h1>Tutor Masters</h1>
-      </div>
-      <ul class="nav-links">
-          <li><a href="homePage.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-      </ul>
-      <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-      </div>
-      <script src="homePage.js"></script>
-    </nav>
 
-    <div class="plsLogIn">
-        <h1 class="logInContext" style="color: #414141;"> Please Log In</h1>
-        <div class ="googleLogIn" id="firebaseui-auth-container"></div>
+   <!--link rel="shortcut icon" type="image/png" href="favicon.png"/-->
+</head>
+<!-- The core Firebase JS SDK is always required and must be listed first-->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+
+<!-- Initialize Firebase >
+<script src="/__/firebase/init.js"></script-->
+<!--script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script-->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+
+<link href="homePageStyle.css" type="text/css" rel="stylesheet">
+
+<nav>
+    <div class="logo">
+        <h1>Tutor Masters</h1>
     </div>
-  </body>
+    <ul class="nav-links">
+        <li><a href="homePage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <script src="homePage.js"></script>
+</nav>
+<div class="plsLogIn">
+    <h1 class="logInContext" style="color: #414141;"> Please Log In</h1>
+    <div class ="googleLogIn" id="firebaseui-auth-container"></div>
+</div>
+
+<body>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+<script src="app.js"></script>
+</body>
 </html>
