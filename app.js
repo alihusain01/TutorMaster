@@ -15,7 +15,7 @@ let currentUser="";
 
 // FirebaseUI config.
 const uiConfig = {
-    signInSuccessUrl: 'loggedIn.html',
+    signInSuccessUrl: 'homePage.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -45,7 +45,7 @@ ui.start('#firebaseui-auth-container', uiConfig);
 let path=window.location.pathname;
 let page=path.split("/").pop();
 console.log(page);
-if(page===("loggedIn.html")) {
+if(page===("homePage.html")) {
 /// cookie stuff
 
 
@@ -82,15 +82,9 @@ if(page===("loggedIn.html")) {
                     document.getElementById('log-in').textContent = 'Congrats ' + user.displayName + ' you logged in';
                     document.body.insertAdjacentHTML = '<h1> Congrats ' + user.displayName + ' you logged in </h1>';
                     console.log('signed in');
+                    document.getElementById("currentUser").textContent=JSON.stringify({currentUser});
 
-                    let data={
 
-                        emailVerified : user.emailVerified,
-                        photoURL : user.photoURL,
-                        uid : user.uid,
-                        phoneNumber: user.phoneNumber,
-                        providerData : user.providerData
-                    };
                     /*if(user=tutor){
                         database.ref('tutors').push(data);
                     }
@@ -98,7 +92,15 @@ if(page===("loggedIn.html")) {
                         database.ref('tutors').push(data);
                     }
                     else{*/
-                    database.ref('general').push(data);
+                    let data={
+                        emailVerified : user.emailVerified,
+                        photoURL : user.photoURL,
+                        uid : user.uid,
+                        phoneNumber: user.phoneNumber,
+                        providerData : user.providerData
+                    }
+                    database.ref("general").push(data);
+
                     //  }
 
                 });
@@ -129,7 +131,7 @@ function signOut(){
         console.log("bad code");
     });
 
-    window.location.assign('index.html');
+    window.location.assign('homePage.html');
 }
 
 ///fonts: Segoe UI Semibold
