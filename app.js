@@ -15,7 +15,7 @@ let currentUser="";
 
 // FirebaseUI config.
 const uiConfig = {
-    signInSuccessUrl: 'loggedIn.html',
+    signInSuccessUrl: 'homePage.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -45,7 +45,7 @@ ui.start('#firebaseui-auth-container', uiConfig);
 let path=window.location.pathname;
 let page=path.split("/").pop();
 console.log(page);
-if(page===("loggedIn.html")) {
+if(page===("homePage.html")) {
 /// cookie stuff
 
 
