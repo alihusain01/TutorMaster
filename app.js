@@ -82,15 +82,9 @@ if(page===("homePage.html")) {
                     document.getElementById('log-in').textContent = 'Congrats ' + user.displayName + ' you logged in';
                     document.body.insertAdjacentHTML = '<h1> Congrats ' + user.displayName + ' you logged in </h1>';
                     console.log('signed in');
+                    document.getElementById("currentUser").textContent=JSON.stringify({currentUser});
 
-                    let data={
 
-                        emailVerified : user.emailVerified,
-                        photoURL : user.photoURL,
-                        uid : user.uid,
-                        phoneNumber: user.phoneNumber,
-                        providerData : user.providerData
-                    };
                     /*if(user=tutor){
                         database.ref('tutors').push(data);
                     }
@@ -98,7 +92,15 @@ if(page===("homePage.html")) {
                         database.ref('tutors').push(data);
                     }
                     else{*/
-                    database.ref('general').push(data);
+                    let data={
+                        emailVerified : user.emailVerified,
+                        photoURL : user.photoURL,
+                        uid : user.uid,
+                        phoneNumber: user.phoneNumber,
+                        providerData : user.providerData
+                    }
+                    database.ref("general").push(data);
+
                     //  }
 
                 });
@@ -129,7 +131,7 @@ function signOut(){
         console.log("bad code");
     });
 
-    window.location.assign('index.html');
+    window.location.assign('homePage.html');
 }
 
 ///fonts: Segoe UI Semibold
